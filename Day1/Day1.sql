@@ -238,3 +238,18 @@ SELECT a.i * b.i
 FROM @tmp a
 JOIN @tmp b ON (a.Id > b.Id)
 WHERE a.i + b.i = 2020
+
+
+--- Part Two ---
+/*The Elves in accounting are thankful for your help; one of them even offers you a starfish coin they had left over from a past vacation. They offer you a second one if you can find three numbers in your expense report that meet the same criteria.
+
+Using the above example again, the three entries that sum to 2020 are 979, 366, and 675. Multiplying them together produces the answer, 241861950.
+
+In your expense report, what is the product of the three entries that sum to 2020?*/
+
+
+SELECT a.i * b.i*c.i
+FROM @tmp a
+JOIN @tmp b ON (a.Id > b.Id )
+JOIN @tmp c ON (b.Id > c.Id )
+WHERE a.i + b.i+c.i = 2020
