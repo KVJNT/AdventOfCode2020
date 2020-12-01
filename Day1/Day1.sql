@@ -236,7 +236,7 @@ FROM STRING_SPLIT(@input, CHAR(10))
 
 SELECT a.i * b.i
 FROM @tmp a
-JOIN @tmp b ON (a.Id > b.Id)
+JOIN @tmp b ON (a.Id >= b.Id)
 WHERE a.i + b.i = 2020
 
 
@@ -250,6 +250,6 @@ In your expense report, what is the product of the three entries that sum to 202
 
 SELECT a.i * b.i*c.i
 FROM @tmp a
-JOIN @tmp b ON (a.Id > b.Id )
-JOIN @tmp c ON (b.Id > c.Id )
+JOIN @tmp b ON (a.Id >= b.Id )
+JOIN @tmp c ON (b.Id >= c.Id )
 WHERE a.i + b.i+c.i = 2020
